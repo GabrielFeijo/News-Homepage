@@ -3,7 +3,7 @@ import web3 from '../../public/assets/images/web-3-desktop.jpg';
 
 const MainHeadline = () => {
 	return (
-		<div className='col-span-4 space-y-4'>
+		<section className='col-span-4 space-y-4'>
 			<Image
 				src={web3}
 				alt='The Bright Future of Web 3.0'
@@ -26,7 +26,7 @@ const MainHeadline = () => {
 					</button>
 				</section>
 			</div>
-		</div>
+		</section>
 	);
 };
 
