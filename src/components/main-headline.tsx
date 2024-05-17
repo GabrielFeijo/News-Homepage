@@ -14,14 +14,14 @@ const MainHeadline = () => {
 					The Bright Future of Web 3.0?
 				</h1>
 
-				<section className='flex flex-col justify-between items-start gap-4 lg:max-w-96 w-full'>
-					<p>
+				<section className='flex flex-col justify-between items-start gap-4 lg:max-w-96 w-full '>
+					<p className='text-[.9rem]'>
 						We dive into the next evolution of the web that claims to put the
 						power of the platforms back into the hands of the people. But is it
 						really fulfilling its promise?
 					</p>
 
-					<button className='bg-primary-btn text-white px-4 py-3 uppercase tracking-widest font-medium'>
+					<button className='bg-primary-btn text-white px-4 py-3 uppercase tracking-widest font-medium text-sm hover:bg-secondary transition-all delay-100'>
 						Read more
 					</button>
 				</section>
