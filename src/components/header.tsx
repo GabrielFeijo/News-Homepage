@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import logo from '../../public/assets/images/logo.svg';
-import Link from 'next/link';
+import NavItem from './nav-item';
 
 const Header = () => {
 	return (
@@ -12,21 +12,22 @@ const Header = () => {
 
 			<nav>
 				<ul className='flex gap-4'>
-					<li>
-						<Link href='#'>Home</Link>
-					</li>
-					<li>
-						<Link href='#'>New</Link>
-					</li>
-					<li>
-						<Link href='#'>Popular</Link>
-					</li>
-					<li>
-						<Link href='#'>Trending</Link>
-					</li>
-					<li>
-						<Link href='#'>Categories</Link>
-					</li>
+					<NavItem
+						href='#'
+						text='Home'
+					/>
+					<NavItem
+						href='#'
+						text='Popular'
+					/>
+					<NavItem
+						href='#'
+						text='Trending'
+					/>
+					<NavItem
+						href='#'
+						text='Categories'
+					/>
 				</ul>
 			</nav>
 		</header>
