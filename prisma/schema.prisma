@@ -27,23 +27,27 @@ model Post {
   slug        String    @unique
   title       String
   description String
+  body        String
   imageURL    String
   category    Category
   author      User      @relation(fields: [authorId], references: [id])
   authorId    String    @db.ObjectId
   comments    Comment[]
+  createdAt   DateTime  @default(now())
 }
 
 model User {
-  id    String  @id @default(auto()) @map("_id") @db.ObjectId
-  email String  @unique
-  name  String?
-  posts Post[]
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  email     String   @unique
+  name      String?
+  posts     Post[]
+  createdAt DateTime @default(now())
 }
 
 model Comment {
-  id      String @id @default(auto()) @map("_id") @db.ObjectId
-  comment String
-  post    Post   @relation(fields: [postId], references: [id])
-  postId  String @db.ObjectId
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  comment   String
+  post      Post     @relation(fields: [postId], references: [id])
+  postId    String   @db.ObjectId
+  createdAt DateTime @default(now())
 }
