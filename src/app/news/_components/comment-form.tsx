@@ -29,6 +29,8 @@ const CommentForm = ({
 		});
 
 		addNewComment(comment);
+
+		formRef.current?.reset();
 	};
 
 	return (
@@ -43,7 +45,7 @@ const CommentForm = ({
 			<TextArea
 				className='rounded-lg w-full resize-none outline-none'
 				placeholder='Escreva seu comentário...'
-				rows={2}
+				rows={3}
 				name='comment'
 			/>
 			<Button type='submit'>Comentar</Button>

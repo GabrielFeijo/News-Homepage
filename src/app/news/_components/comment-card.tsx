@@ -1,6 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { faker } from '@faker-js/faker';
 import { Comment } from '@prisma/client';
+import { memo } from 'react';
 
 const CommentCard = ({ comment }: { comment: Comment }) => {
 	return (
@@ -23,4 +24,4 @@ const CommentCard = ({ comment }: { comment: Comment }) => {
 	);
 };
 
-export default CommentCard;
+export default memo(CommentCard);
