@@ -36,6 +36,9 @@ const CommentForm = ({
 			ref={formRef}
 			onSubmit={handleSubmit}
 			className='space-y-2 border p-4 text-right rounded-lg'
+			placeholder={undefined}
+			onPointerEnterCapture={undefined}
+			onPointerLeaveCapture={undefined}
 		>
 			<TextArea
 				className='rounded-lg w-full resize-none outline-none'
