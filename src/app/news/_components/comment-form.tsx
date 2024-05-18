@@ -1,0 +1,51 @@
+'use client';
+import { useRef } from 'react';
+import { Button } from '../../../components/ui/button';
+import TextArea from './textarea';
+import { Form } from '@unform/web';
+import { FormHandles, SubmitHandler } from '@unform/core';
+import { createNewComment } from '@/app/news/_actions/create-comment';
+import { Comment } from '@prisma/client';
+
+interface FormData {
+	comment: string;
+}
+
+const CommentForm = ({
+	addNewComment,
+	postId,
+}: {
+	addNewComment: (comment: Comment) => void;
+	postId: string;
+}) => {
+	const formRef = useRef<FormHandles>(null);
+
+	const handleSubmit: SubmitHandler<FormData> = async (data) => {
+		if (!data.comment) return;
+
+		const comment = await createNewComment({
+			message: data.comment,
+			postId,
+		});
+
+		addNewComment(comment);
+	};
+
+	return (
+		<Form
+			ref={formRef}
+			onSubmit={handleSubmit}
+			className='space-y-2 border p-4 text-right rounded-lg'
+		>
+			<TextArea
+				className='rounded-lg w-full resize-none outline-none'
+				placeholder='Escreva seu comentário...'
+				rows={2}
+				name='comment'
+			/>
+			<Button type='submit'>Comentar</Button>
+		</Form>
+	);
+};
+
+export default CommentForm;
