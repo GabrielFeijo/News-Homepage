@@ -42,9 +42,9 @@ const NewsPage = async ({ params }: { params: { slug: string } }) => {
 				</p>
 
 				<div className='font-medium'>
-					<p>Autor: {news?.author.name}</p>
+					<p>Author: {news?.author.name}</p>
 					<p>
-						Data de Criação:{' '}
+						Creation Date:{' '}
 						{formatToBrazilianDate(news!.createdAt.toISOString())}
 					</p>
 				</div>

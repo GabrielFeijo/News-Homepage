@@ -25,7 +25,7 @@ const Comments = ({ postId }: { postId: string }) => {
 
 	return (
 		<section className='space-y-4'>
-			<h2 className='text-3xl font-bold text-slate-800'>Comentários</h2>
+			<h2 className='text-3xl font-bold text-slate-800'>Comments</h2>
 
 			<CommentForm
 				addNewComment={addNewComment}

@@ -44,11 +44,11 @@ const CommentForm = ({
 		>
 			<TextArea
 				className='rounded-lg w-full resize-none outline-none'
-				placeholder='Escreva seu comentário...'
+				placeholder='Write your comment...'
 				rows={3}
 				name='comment'
 			/>
-			<Button type='submit'>Comentar</Button>
+			<Button type='submit'>Comment</Button>
 		</Form>
 	);
 };

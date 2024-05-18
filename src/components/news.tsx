@@ -4,7 +4,9 @@ import { db } from '@/lib/prisma';
 import Separator from './separator';
 
 const News = async () => {
-	const allNews = await db.post.findMany({});
+	const allNews = await db.post.findMany({
+		orderBy: { createdAt: 'desc' },
+	});
 
 	return (
 		<section className='bg-secondary col-span-2 p-6 pr-0'>
