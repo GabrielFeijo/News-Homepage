@@ -132,6 +132,62 @@ const main = async () => {
 				authorId: createdUsers[1].id,
 			},
 		}),
+		// Novas notícias de PC
+		prisma.post.create({
+			data: {
+				slug: 'best-pc-builds-2024',
+				title: 'The Best PC Builds for 2024',
+				description:
+					'A guide to the best PC builds for gaming, productivity, and more in 2024.',
+				imageURL: 'https://example.com/best-pc-builds.jpg',
+				category: 'PC',
+				authorId: createdUsers[2].id,
+			},
+		}),
+		prisma.post.create({
+			data: {
+				slug: 'latest-gpu-releases',
+				title: 'Latest GPU Releases: What You Need to Know',
+				description:
+					'An overview of the latest GPU releases and their performance benchmarks.',
+				imageURL: 'https://example.com/latest-gpu-releases.jpg',
+				category: 'PC',
+				authorId: createdUsers[2].id,
+			},
+		}),
+		prisma.post.create({
+			data: {
+				slug: 'pc-gaming-trends-2024',
+				title: 'PC Gaming Trends to Watch in 2024',
+				description:
+					'Upcoming trends in the PC gaming world that every gamer should be aware of.',
+				imageURL: 'https://example.com/pc-gaming-trends.jpg',
+				category: 'PC',
+				authorId: createdUsers[2].id,
+			},
+		}),
+		prisma.post.create({
+			data: {
+				slug: 'building-budget-pc',
+				title: 'Building a Budget PC: Tips and Tricks',
+				description:
+					'How to build a powerful PC on a budget without sacrificing performance.',
+				imageURL: 'https://example.com/building-budget-pc.jpg',
+				category: 'PC',
+				authorId: createdUsers[2].id,
+			},
+		}),
+		prisma.post.create({
+			data: {
+				slug: 'pc-hardware-upgrades-2024',
+				title: 'Top PC Hardware Upgrades for 2024',
+				description:
+					'The best hardware upgrades to keep your PC running at peak performance in 2024.',
+				imageURL: 'https://example.com/pc-hardware-upgrades.jpg',
+				category: 'PC',
+				authorId: createdUsers[2].id,
+			},
+		}),
 	]);
 
 	console.log('Created posts:', posts);
