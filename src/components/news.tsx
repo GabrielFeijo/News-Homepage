@@ -1,31 +1,22 @@
 import React from 'react';
 import NewsCard from './news-card';
+import { db } from '@/lib/prisma';
+import Separator from './separator';
 
-const News = () => {
+const News = async () => {
+	const allNews = await db.post.findMany({});
+
 	return (
 		<section className='bg-secondary col-span-2 p-6 pr-0'>
 			<h2 className='text-secondary text-3xl font-semibold'>New</h2>
 
 			<div className='mt-4 h-[25rem] flex justify-between flex-col overflow-x-auto pr-2 scroll'>
-				<NewsCard />
-				<div className='border-b border-slate-500 my-2'></div>
-				<NewsCard />
-				<div className='border-b border-slate-500 my-2'></div>
-				<NewsCard />
-				<div className='border-b border-slate-500 my-2'></div>
-				<NewsCard />
-				<div className='border-b border-slate-500 my-2'></div>
-				<NewsCard />
-				<div className='border-b border-slate-500 my-2'></div>
-				<NewsCard />
-				<div className='border-b border-slate-500 my-2'></div>
-				<NewsCard />
-				<div className='border-b border-slate-500 my-2'></div>
-				<NewsCard />
-				<div className='border-b border-slate-500 my-2'></div>
-				<NewsCard />
-				<div className='border-b border-slate-500 my-2'></div>
-				<NewsCard />
+				{allNews.map((news, index) => (
+					<div key={news.id}>
+						<NewsCard news={news} />
+						{index !== allNews.length - 1 && <Separator />}
+					</div>
+				))}
 			</div>
 		</section>
 	);
