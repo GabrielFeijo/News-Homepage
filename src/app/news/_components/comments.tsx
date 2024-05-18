@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import CommentForm from './comment-form';
 import { Comment } from '@prisma/client';
 import { searchForComments } from '@/app/news/_actions/search-comments';
+import CommentCard from './comment-card';
 
 const Comments = ({ postId }: { postId: string }) => {
 	const [comments, setComments] = useState<Comment[]>([]);
@@ -32,7 +33,10 @@ const Comments = ({ postId }: { postId: string }) => {
 			/>
 
 			{comments.map((comment) => (
-				<p key={comment.id}>{comment.comment}</p>
+				<CommentCard
+					comment={comment}
+					key={comment.id}
+				/>
 			))}
 		</section>
 	);

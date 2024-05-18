@@ -14,7 +14,7 @@ export default async function Home() {
 		<main className='p-4 md:py-10 md:px-20 space-y-10'>
 			<Header />
 
-			<section className='block lg:grid grid-cols-6 gap-6 space-y-8 lg:space-y-0'>
+			<section className='block lg:grid grid-cols-6 gap-6 space-y-8 lg:space-y-0 '>
 				<MainHeadline />
 				<News />
 			</section>

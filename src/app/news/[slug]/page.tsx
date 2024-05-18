@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
+import Comments from '@/app/news/_components/comments';
 import Header from '@/components/header';
+import Separator from '@/components/separator';
 import { db } from '@/lib/prisma';
 import { formatToBrazilianDate } from '@/utils/format-date';
 
@@ -17,7 +19,7 @@ const NewsPage = async ({ params }: { params: { slug: string } }) => {
 			<img
 				src={news?.imageURL}
 				alt={news?.title}
-				className='h-60 w-full object-cover'
+				className='h-96 w-full object-cover'
 			/>
 
 			<section className='space-y-2'>
@@ -47,6 +49,10 @@ const NewsPage = async ({ params }: { params: { slug: string } }) => {
 					</p>
 				</div>
 			</section>
+
+			<Separator />
+
+			<Comments postId={news!.id} />
 		</main>
 	);
 };
