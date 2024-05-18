@@ -4,7 +4,7 @@ import Link from 'next/link';
 const NewsCard = ({ news }: { news: Post }) => {
 	return (
 		<Link
-			href='#'
+			href={`/news/${news.slug}`}
 			className='cursor-pointer hover:text-secondary text-white transition-all delay-75'
 		>
 			<h3 className='text-lg  font-semibold'>{news.title}</h3>

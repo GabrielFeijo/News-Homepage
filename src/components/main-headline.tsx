@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { db } from '@/lib/prisma';
+import Link from 'next/link';
 
 const MainHeadline = async () => {
 	const mainNews = await db.post.findFirst({
@@ -24,9 +25,12 @@ const MainHeadline = async () => {
 				<section className='flex flex-col justify-between items-start gap-4 lg:max-w-96 w-full '>
 					<p className='text-[.9rem]'>{mainNews?.description}</p>
 
-					<button className='bg-primary-btn text-white px-4 py-3 uppercase tracking-widest font-medium text-sm hover:bg-secondary transition-all delay-100'>
+					<Link
+						href={`/news/${mainNews?.slug}`}
+						className='bg-primary-btn text-white px-4 py-3 uppercase tracking-widest font-medium text-sm hover:bg-secondary transition-all delay-100'
+					>
 						Read more
-					</button>
+					</Link>
 				</section>
 			</div>
 		</section>
